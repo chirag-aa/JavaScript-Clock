@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Digital Clock</title>
+</head>
+
+<body>
+    <div class="intro">
+        <h1>Website For Date And Time</h1>
+       
+    </div>
+    <marquee behavior="text" direction="left" class="red">Welcome! This is a Website which displays date(MM/DD/YYYY) and time
+        according to the time zone in which you are present.</marquee>
+    <div class="container">
+        <h1>The Current Time Is: <span id="clockt"></span></h1>
+        <script>
+            function fortime() {
+                let time = new Date();
+                let total = time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds();
+                console.log(total);
+                let currentDate = time.toLocaleDateString();
+                console.log(currentDate);
+                var display = document.getElementById('clockt');
+                display.innerText = total + " Dated " + currentDate;
+            }
+            setInterval(fortime, 1000);
+        </script>
+    </div>
+</body>
+
+</html>
